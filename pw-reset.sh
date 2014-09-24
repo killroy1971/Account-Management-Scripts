@@ -1,7 +1,7 @@
 #!/bin/bash
-# Change a user's password across all TO9 Unix servers
-# The srvlist.txt.full is one IP (or hostname) per line.
-echo "This script will change the user's password on all TO9 *nix servers."
+# Change a user's password across all servers listed in srvlist.txt
+# The srvlist.txt is one IP (or hostname) per line.
+echo "This script will change the user's password on all servers listed in srvlist.txt."
 echo "Enter the username and press <ENTER>: "
 read NEWUSER
 echo "Enter the new password and press <ENTER>: "
@@ -11,4 +11,3 @@ for i in `cat $HOME/bin/srvlist.txt.full`;
  do echo SSHing to $i
    ssh -t sneadgle@${i} "echo '$NEWUSER:$NEWPWD' | sudo /usr/sbin/chpasswd -e "
 done
-#   sudo /usr/sbin/useradd -G wheel $new_user

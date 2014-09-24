@@ -1,0 +1,2 @@
+Replace text with the hostame(s) or IP addresses of your servers.  One server name/IP per line.
+

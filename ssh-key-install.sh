@@ -4,5 +4,5 @@
 # The srvlist.txt.full is one IP (or hostname) per line.
 for i in `cat srvlist.txt.full`;
  do echo SSHing to $i
-   ssh-copy-id -i sneadgle@${i}
+   ssh-copy-id -i $HOME/.ssh/id_rsa.pub $USER@${i}
 done
