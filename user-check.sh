@@ -4,7 +4,7 @@
 echo "This script will check for a user on all servers listed in srvlist.txt."
 echo "Enter the username and press <ENTER>: "
 read THATUSER
-for i in `cat $HOME/bin/srvlist.txt.full`;
+for i in `cat ./srvlist.txt`;
  do echo SSHing to $i
-   ssh -t sneadgle@${i} "getent passwd $THATUSER"
+   ssh -t ${USER}@${i} "getent passwd $THATUSER"
 done
